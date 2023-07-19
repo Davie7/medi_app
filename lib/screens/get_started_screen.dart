@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medi_app/services/login_or_register.dart';
 import '../utils/app_styles.dart';
 import 'package:gap/gap.dart';
-import 'login_screen.dart';
 import 'package:lottie/lottie.dart';
 
 class GetStartedScreen extends StatelessWidget {
@@ -69,7 +69,7 @@ class GetStartedScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LoginScreen(),
+                        builder: (context) => LoginOrRegister(),
                       ),
                     );
                   },

@@ -8,26 +8,25 @@ class Styles {
   static Color bgColor = const Color(0xFFeeedf2);
   static Color? deepPurpleShade = Colors.deepPurple[100];
   static Color? pink = Colors.pink[100];
-  static Color? white = Colors.white;
+  static Color white = Colors.white;
   static TextStyle textStyle = TextStyle(
     fontSize: 16,
     color: textColor,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle headlineStyle1 = TextStyle(
+  static TextStyle headlineStyle1 = const TextStyle(
     fontSize: 20,
-    // color: textColor,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineStyle2 = TextStyle(
+  static TextStyle headlineStyle2 = const TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineStyle3 = TextStyle(
+  static TextStyle headlineStyle3 = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineStyle4 = TextStyle(
+  static TextStyle headlineStyle4 = const TextStyle(
     fontSize: 15,
   );
 }

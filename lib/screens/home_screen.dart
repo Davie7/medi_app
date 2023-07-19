@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:medi_app/providers/medical_team_provider.dart';
 import 'package:medi_app/widgets/category_card.dart';
 import 'package:medi_app/widgets/doctor_category_list.dart';
 import '../utils/app_styles.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    var medics = Provider.of<MedicalTeamProvider>(context).medicList;
     return Scaffold(
       backgroundColor: Styles.bgColor,
       body: SafeArea(
@@ -57,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: Styles.pink,
+                    color: Styles.deepPurpleShade,
                     borderRadius: BorderRadius.circular(12)),
                 child: Row(
                   children: [
@@ -78,14 +81,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             'How do you feel?',
                             style: Styles.headlineStyle3,
                           ),
-                          Gap(12),
+                          const Gap(12),
                           Text('Feel out your medical card right now',
                               style: Styles.headlineStyle4),
-                          Gap(12),
+                          const Gap(12),
                           Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Styles.deepPurpleShade,
+                              color: Styles.primaryColor,
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Center(
@@ -114,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Styles.deepPurpleShade,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: TextField(
+                child: const TextField(
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.search),
                     border: InputBorder.none,
@@ -130,15 +133,10 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 80,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  CategoryCard(
-                      icon: 'lib/icons/tooth.png', categoryName: 'Dentist'),
-                  CategoryCard(
-                      icon: 'lib/icons/surgeon.png', categoryName: 'Surgeon'),
-                  CategoryCard(
-                      icon: 'lib/icons/medicine.png',
-                      categoryName: 'Pharmacist'),
-                ],
+                children: medics
+                    .map((medic) =>
+                        CategoryCard(icon: medic.img, categoryName: medic.name))
+                    .toList(),
               ),
             ),
             const Gap(25),
