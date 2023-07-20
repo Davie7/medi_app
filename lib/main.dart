@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_app/providers/mainscreen_provider.dart';
 import 'package:medi_app/providers/medical_team_provider.dart';
 import 'package:medi_app/providers/shared_preferences_provider.dart';
 import 'package:medi_app/utils/app_styles.dart';
@@ -14,6 +15,9 @@ void main() {
         ),
         ChangeNotifierProvider<MedicalTeamProvider>(
           create: (_) => MedicalTeamProvider(),
+        ),
+        ChangeNotifierProvider<MainScreenNotifier>(
+          create: (_) => MainScreenNotifier(),
         ),
       ],
       child: const MyApp(),

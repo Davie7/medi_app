@@ -37,23 +37,23 @@ class BottomNavBar extends StatelessWidget {
                       value.pageIndex = 1;
                     },
                     icon: value.pageIndex == 1
-                        ? Ionicons.search
-                        : Ionicons.search_outline),
+                        ? Ionicons.calendar
+                        : Ionicons.calendar_outline),
                 BottomNavWidget(
                   onTap: () {
                     value.pageIndex = 2;
                   },
                   icon: value.pageIndex == 2
-                      ? Ionicons.heart
-                      : Ionicons.heart_circle_outline,
+                      ? Ionicons.videocam
+                      : Ionicons.videocam_outline,
                 ),
                 BottomNavWidget(
                   onTap: () {
                     value.pageIndex = 3;
                   },
                   icon: value.pageIndex == 3
-                      ? Ionicons.cart
-                      : Ionicons.cart_outline,
+                      ? Ionicons.people
+                      : Ionicons.people_outline,
                 ),
               ],
             ),

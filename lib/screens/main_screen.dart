@@ -3,19 +3,19 @@ import 'package:provider/provider.dart';
 import '../providers/mainscreen_provider.dart';
 import '../utils/app_styles.dart';
 import '../widgets/bottom_navigation_bar.dart';
-import 'chat_screen.dart';
-import 'home_screen.dart';
-import 'menu_screen.dart';
-import 'notification_screen.dart';
+import 'nav_screens/appointment_screen.dart';
+import 'nav_screens/home_screen.dart';
+import 'nav_screens/medics.dart';
+import 'nav_screens/vid_conference_screen.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
   List<Widget> pageList = [
     HomeScreen(),
-    ChatScreen(),
-    NotificationScreen(),
-    MenuScreen(),
+    AppointmentScreen(),
+    VidConferencingScreen(),
+    MedicsScreen(),
   ];
 
   @override

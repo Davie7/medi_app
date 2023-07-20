@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:medi_app/providers/medical_team_provider.dart';
+import 'package:medi_app/screens/nav_screens/medics.dart';
 import 'package:medi_app/widgets/category_card.dart';
-import 'package:medi_app/widgets/doctor_category_list.dart';
-import '../utils/app_styles.dart';
+import '../../utils/app_styles.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DoctorCategory(),
+                          builder: (context) => MedicsScreen(),
                         ),
                       );
                     },

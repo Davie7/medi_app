@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_app/utils/app_styles.dart';
 
 class BottomNavWidget extends StatelessWidget {
 
@@ -16,7 +17,7 @@ class BottomNavWidget extends StatelessWidget {
       child: SizedBox(
         height: 36,
         width: 36,
-        child: Icon(icon, color: Colors.grey.shade600,),
+        child: Icon(icon, color: Styles.primaryColor,),
       ),
     );
   }
